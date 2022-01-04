@@ -1,0 +1,75 @@
+\documentclass{article}
+\title{Linux Basic and Advanced Commnds}
+\author{Jay Chachapara}
+\date{\today}
+\begin{document}
+	\maketitle
+	\noindent
+	\begin{itemize}
+		\item \b {File Commands}
+			\begin{itemize}
+				\item ls \\					
+					dirictory listing \\
+					list directory content of files and directories.\\
+					-t sorts file by modification time (last modified is first)\\
+					-1 one file per line \\
+					-a display all files including hidden files \\
+					can merge/call more than one command in one \\ i.e. ls -t -1\\
+					
+				\item ls -al \\
+					display all files including hidden file + details 
+				\item cd dir
+				\item cd
+				\item pwd
+				\item mkdir dir
+				\item rm file 
+				\item rm -r dir
+				\item rm -f file
+				\item rm -rf dir
+				\item cp file1 file2
+				\item cp -r dir1 dir2
+				\item mv file1 file2
+				\item ln -s file link
+				\item touch file
+				\item cat > file
+				\item more file
+				\item head file
+				\item tail file
+				\item tail -f file 
+			\end{itemize}
+		\item Process Management
+			\begin{itemize}
+				\item ps 
+				\item top
+				\item kill pid
+				\item killall proc
+				\item bg
+				\item fg
+				\item fg n
+			\end{itemize}
+		\item System Information
+			\begin{itemize}
+				\item date
+				\item cal
+				\item uptime
+				\item w
+				\item whoami
+				\item finger user
+				\item uname -a
+				\item cat /proc/cpuinfo
+				\item cat /proc/meminfo
+				\item man command
+				\item df
+				\item du
+				\item free
+				\item whereis app
+				\item which app
+			\end{itemize}
+		\item File Permissions
+			\begin{itemize}
+				\item chmod octal file
+				\item chmod 777
+				\item chmod 755
+			\end{itemize}
+	\end{itemize}
+\end{document}
