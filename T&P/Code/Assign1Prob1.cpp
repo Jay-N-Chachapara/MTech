@@ -7,9 +7,28 @@ int max_of_four(int a,int b,int c, int d){
 }
 int main()
 {
-     int a=0,b=0,c=0,d=0;
-     cout<<"Enter four integer values : "<<endl;
-     cin>>a>>b>>c>>d;
+     int a,b,c,d;
+     bool get = true;
+     cin.exceptions(std::istream::failbit);
+     do
+     {
+          try
+          {
+               cout<<"Enter four integer values : "<<endl;
+               cin>>a>>b>>c>>d;
+               get = true;
+          }
+          catch(std::ios_base::failure &fail)
+          {
+               get = false;
+               cout<<"Please enter integer value"<<endl;
+               cin.clear();
+               std::string tmp;
+               getline(cin, tmp);
+          }
+          
+     }
+     while(!get);
      cout<<"Entered values are \n"<<a<<" "<<b<<" "<<c<<" "<<d<<endl;
      cout<<"Maximum of entered value is : "<<max_of_four(a,b,c,d)<<endl;
      return 0;
