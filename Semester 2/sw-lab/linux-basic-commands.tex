@@ -5,22 +5,35 @@
 \begin{document}
 	\maketitle
 	\begin{itemize}
-		\item \b {File Commands}
+		\item \textbf{File Commands}
 			\begin{itemize}
-				\item ls \\					
+				\item \textbf{ls} \\					
 					dirictory listing \\
 					list directory content of files and directories.\\
 					-t sorts file by modification time (last modified is first)\\
 					-1 one file per line \\
 					-a display all files including hidden files \\
 					can merge/call more than one command in one \\ i.e. ls -t -1\\
-					
-				\item ls -al \\
-					display all files including hidden file + details 
-				\item cd dir
-				\item cd
-				\item pwd
-				\item mkdir dir
+				\item \textbf{ls -al} \\
+					display all files including hidden file + details \\
+				\item \textbf{cd dir} \\
+					Change directory to dir\\
+					cd .. one level up dir\\
+				\item cd \\
+					The cd command will allow you to change directories. When you open a terminal you will be in your home directory. To move around the file system you will use cd.\\
+				\item pwd \\
+					stads for Print Working Directory\\
+					shows current working directory\\
+					-L (Logical) use PWD from environment, even if it contains symbolic links\\
+					-P (Physical) Avoid all symbolic links\\
+					If both ‘-L‘ and ‘-P‘ options are used, option ‘L‘ is taken into priority. If no option is specified at the prompt, pwd will avoid all symlinks, i.e., take option ‘-P‘ into account.\\
+					Exit status 0 for sucess and non zero for failure\\
+				\item \textbf{mkdir dir}\\
+					create a dirictory dir\\
+					stands for make directory\\
+					mkdir \{dir1,dir2,dir3\} - creates multiple directories in the current location. Do not use space inside \{\}. \\
+					mkdir -p directory/path/newdir - creates a directory structure with the missing parent directory (if any)\\
+					mkdir -m777 dir - creates a directory and sets full read, write, and execute permission for all users \\
 				\item rm file 
 				\item rm -r dir
 				\item rm -f file
