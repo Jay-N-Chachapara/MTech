@@ -126,7 +126,7 @@ int main()
      {
           try
           {
-               cout<<"Enter an integer value that is less than 10000 and has prime factor only 2,3, and 5."<<endl;
+               cout<<"Enter an integer value that is less than or equal to 10000 and has prime factor only 2,3, and 5."<<endl;
                cin>>input;
                if(input > 10000)
                     throw 10000;
@@ -150,7 +150,7 @@ int main()
           {
                get = false;
                if (x == 10000)
-                    cout<<"Entered value less than 10000"<<endl;
+                    cout<<"Entered value is greater than 10000,please enter less than or equal to 10000"<<endl;
                if (x == 5)
                     cout<<"Entered value is not divisible by 5"<<endl;
                if (x == 3)
