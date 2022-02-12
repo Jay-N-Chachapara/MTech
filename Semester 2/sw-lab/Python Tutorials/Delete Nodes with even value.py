@@ -55,12 +55,17 @@ class LinkedList(Node) :
                     print()
                     self.Traverse()
                     print()
+                    if self.__head.next is None :
+                         break
                temp = self.__head.next
                preTemp = temp
                flag = False
                while (temp is not None) :
-                    if float(temp.data) % 2 == 0 and temp.next is not None:
-                         preTemp.next = temp.next.next
+                    if float(temp.data) % 2 == 0 :
+                         if temp.next is not None :
+                              preTemp.next = temp.next.next
+                         else :
+                              preTemp.next = temp.next
                     else :
                          preTemp = temp
                     if temp is not None and float(temp.data) % 2 == 0:
