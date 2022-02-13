@@ -1,0 +1,4 @@
+Hello there
+This is the file called file.txt
+This is the content of the file.
+Bye for now see you again.

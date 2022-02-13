@@ -7,15 +7,15 @@ pthread_mutex_t mutex;
 int cnt = 1;
 int numreader = 0;
 
-void *writer(void *wno)
+void *writer()
 {   
      sem_wait(&wrt);
-     cnt = cnt+2;
-     printf("Writer : modified cnt to %d\n",cnt);
+     cnt = cnt+1;
+     printf("Writer : modified shared content to %d\n",cnt);
      sem_post(&wrt);
 
 }
-void *reader(void *rno)
+void *reader()
 {   
      // Reader acquire the lock before modifying numreader
      pthread_mutex_lock(&mutex);
@@ -24,7 +24,7 @@ void *reader(void *rno)
           sem_wait(&wrt); // If this id the first reader, then it will block the writer
      pthread_mutex_unlock(&mutex);
      // Reading Section
-     printf("Reader : read cnt as %d\n",cnt);
+     printf("Reader : read shared content as %d\n",cnt);
      // Reader acquire the lock before modifying numreader
      pthread_mutex_lock(&mutex);
      numreader--;
@@ -41,17 +41,20 @@ int main()
      scanf("%d\n%d",&Readers,&Writers);
 
      printf("%d Readers and %d Writers.\n",Readers,Writers);
-     pthread_t read[Readers];
+     pthread_t read[Readers],write[Writers];
 
      pthread_mutex_init(&mutex, NULL);
 
      sem_init(&wrt,0,1);
      
-     for(int i = 0; i < Readers; i++)
+     for(i = 0; i < Readers; i++)
           pthread_create(&read[i], NULL, reader, NULL);
+     
+     for(j = 0; j < Writers; j++)
+          pthread_create(&write[j], NULL, writer, NULL);
 
      for(int j = 0; j< Writers; j++)
-          writer(NULL);
+          pthread_join(write[j], NULL);
 
      for(int i = 0; i < Readers; i++)
           pthread_join(read[i], NULL);
